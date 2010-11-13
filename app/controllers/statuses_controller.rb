@@ -3,7 +3,7 @@ class StatusesController < ApplicationController
   
   # GET /statuses
   def index
-    @statuses = Status.includes(:user)
+    @statuses = Status.includes(:user, :comments => :user)
     @status = Status.new(params[:status])
   end
 
