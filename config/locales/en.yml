@@ -6,3 +6,5 @@ en:
     actions:
       status:
         create: Post
+      comment:
+        create: Post
