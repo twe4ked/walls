@@ -23,10 +23,10 @@ class StatusesController < ApplicationController
 
     respond_to do |format|
       if @status.save
-        format.html { redirect_to(statuses_path, :notice => 'Status was successfully created.') }
+        format.html { redirect_to(root_path, :notice => 'Status was successfully created.') }
       else
         # format.html { render :action => "new" }
-        format.html { redirect_to(statuses_path, :alert => 'Status was not created.') }
+        format.html { redirect_to(root_path, :alert => 'Status was not created.') }
       end
     end
   end
