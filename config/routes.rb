@@ -1,4 +1,4 @@
-Wall::Application.routes.draw do
+Walls::Application.routes.draw do
   devise_for :users
 
   resources :statuses, :except => [:edit, :update] do

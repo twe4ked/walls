@@ -1,4 +1,4 @@
-Wall::Application.configure do
+Walls::Application.configure do
   # Settings specified here will take precedence over those in config/environment.rb
 
   # In the development environment your application's code is reloaded on
@@ -24,6 +24,6 @@ Wall::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
   
   # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  config.action_mailer.default_url_options = { :host => 'wall.local' }
+  config.action_mailer.default_url_options = { :host => 'walls.local' }
 end
 
