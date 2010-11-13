@@ -8,4 +8,15 @@ class User < ActiveRecord::Base
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
   
   has_many :statuses
+  
+  before_validation :set_default_username
+  
+  validates_uniqueness_of :username
+  
+  private
+    
+    def set_default_username
+      self.username ||= self.email.split("@").first
+    end
+    
 end
