@@ -8,4 +8,13 @@ Feature: Comments
     Then I post "Hello world, hello" as a comment on "Hello world"
     Then I should be on the home page
     And I should see "Hello world, hello" within "li.comment"
-    
+
+  @javascript
+  Scenario: Posting a new comment via the "Add comment" link
+    Given I am a new, authenticated user
+    Then I post "Hello world" as a status update
+    Then I should be on the home page
+    And I should see "Hello world"
+    Then I post "Hello world, hello" using Javascript as a comment on "Hello world"
+    Then I should be on the home page
+    And I should see "Hello world, hello" within "li.comment"
