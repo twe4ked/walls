@@ -17,11 +17,6 @@
             %span.username Posted by #{comment.user.username}
             %span
               = link_to timeago(comment.created_at, :format => :long), status
-              
-              / = debug comment.user.class
-              
-              / = debug current_user.class
-              
               - if comment.user == current_user
                 |
                 = link_to 'Delete', [status, comment], :confirm => 'Are you sure?', :method => :delete
