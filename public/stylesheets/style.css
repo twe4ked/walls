@@ -1,0 +1,18 @@
+html {
+  font: 12px/140% "Helvetica Neue", Arial, Verdana, Sans-Serif;
+  color: #222; }
+
+body {
+  width: 460px;
+  margin: 20px auto; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  font-size: 14px;
+  font-family: Verdana, 'Helvetica Neue', Arial, Sans-Serif; }
+
+form.formtastic fieldset.inputs ol li.text label {
+  display: block; }
+form.formtastic fieldset.inputs ol li.text textarea {
+  height: 40px;
+  width: 100%; }
