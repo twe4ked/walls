@@ -1,7 +1,7 @@
 %li[status]
   %p= status.content
   %span.username Posted by #{status.user.username}
-  %span= link_to status.created_at.to_s(:short), status
+  %span= link_to timeago(status.created_at, :format => :long), status
   - if status.user == current_user
     = link_to 'Delete', status, :confirm => 'Are you sure?', :method => :delete
     
@@ -11,7 +11,7 @@
         %li[comment]
           %p= comment.content
           %span.username Posted by #{comment.user.username}
-          %span= link_to comment.created_at.to_s(:short), status
+          %span= link_to timeago(comment.created_at, :format => :long), status
           - if comment.user == current_user
             = link_to 'Delete', [status, comment], :confirm => 'Are you sure?', :method => :delete
             
