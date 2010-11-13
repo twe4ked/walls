@@ -8,16 +8,26 @@ html {
   width: 460px;
   margin: 0 auto; }
 
+/* typo */
+p {
+  margin-bottom: 10px; }
+
+strong {
+  font-weight: bold; }
+
+/* headers */
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   font-size: 14px;
   font-family: Verdana, 'Helvetica Neue', Arial, Sans-Serif; }
 
+/* links */
 a {
   color: #333; }
   a:hover {
     text-decoration: none; }
 
+/* Header ------------------------------------------------------------------- */
 header {
   overflow: hidden;
   margin-bottom: 10px;
@@ -44,6 +54,7 @@ header {
   header a {
     color: #eee; }
 
+/* Forms -------------------------------------------------------------------- */
 form.formtastic fieldset.inputs {
   margin-bottom: 5px; }
   form.formtastic fieldset.inputs ol li {
@@ -72,6 +83,8 @@ ul#wall li {
   /* comments */ }
   ul#wall li .content {
     margin-bottom: 10px; }
+    ul#wall li .content p:last-of-type {
+      margin: 0; }
     ul#wall li .content span {
       font-size: 10px; }
       ul#wall li .content span a {
