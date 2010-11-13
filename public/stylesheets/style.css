@@ -30,9 +30,13 @@ header {
     width: 70px;
     height: 50px;
     text-indent: -9001px;
-    background: url("../images/logo.png");
     margin-left: -10px;
-    outline: none; }
+    outline: none;
+    background: url("../images/logo.png") top center; }
+    header h1 a:hover, header h1 a:focus {
+      background-position: center center; }
+    header h1 a:active {
+      background-position: bottom center; }
   header .meta {
     float: right;
     margin-top: 16px;
