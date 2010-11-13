@@ -1,5 +1,5 @@
 - if user_signed_in?
-  = semantic_form_for @status do |f|
+  = semantic_form_for Status.new do |f|
     = f.inputs do
       = f.input :content, :label => false
     = f.buttons do

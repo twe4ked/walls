@@ -1,29 +1,10 @@
-class CommentsController < ApplicationController
-  before_filter :authenticate_user!, :only => :create
-  
-  # POST /statuses
-  def create
-    status = Status.find(params[:status_id])
-    @comment = status.comments.new(params[:comment].merge(:user => current_user))
-    
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to(root_path, :notice => 'Comment was successfully created.') }
-      else
-        format.html { redirect_to(root_path, :alert => 'Comment was not created.') }
-      end
-    end
-  end
+class CommentsController < BasePostController
+  actions :create, :destroy
+  belongs_to :status
 
-  # DELETE /statuses/1
-  def destroy
-    @comment = Comment.find(params[:id])
-    
-    unless @comment.user == current_user
-      redirect_to(root_path, :alert => 'Comment was not deleted.') && return
-    end
-    
-    @comment.destroy
-    redirect_to(root_path, :notice => 'Comment was successfully deleted')
+  private
+
+  def collection_url
+    request.referrer || root_path
   end
 end
