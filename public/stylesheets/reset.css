@@ -70,8 +70,3 @@ header, nav, section, article, footer {
 
 html {
   text-rendering: optimizeLegibility; }
-
-/* Fixes background bleed when using rounded corners
-http://tumble.sneak.co.nz/post/928998513/fixing-the-background-bleed */
-* {
-  -webkit-background-clip: padding-box; }
