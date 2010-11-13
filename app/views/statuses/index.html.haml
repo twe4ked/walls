@@ -1,0 +1,12 @@
+%h1 WAll
+
+= render :partial => "form"
+
+%ul
+  - @statuses.each do |status|
+    %li
+      %p= status.content
+      %span= link_to status.created_at, status
+      
+      %p.actions
+        = link_to 'Delete', status, :confirm => 'Are you sure?', :method => :delete
