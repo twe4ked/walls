@@ -1,12 +1,12 @@
-/* Variables ---------------------------------------------------------------- */
 /* Global ------------------------------------------------------------------- */
 html {
   font: 12px/140% "Helvetica Neue", Arial, Verdana, Sans-Serif;
-  color: #222; }
+  color: #222;
+  background: #f0f0f0; }
 
-body {
+.container {
   width: 460px;
-  margin: 20px auto; }
+  margin: 0 auto; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
@@ -22,11 +22,22 @@ header {
   overflow: hidden;
   margin-bottom: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #333; }
+  height: 40px;
+  color: #eee;
+  background: url("../images/header.png"); }
   header h1 {
-    float: left; }
+    float: left;
+    width: 70px;
+    height: 50px;
+    text-indent: -9001px;
+    background: url("../images/logo.png");
+    margin-left: -10px; }
   header .meta {
-    float: right; }
+    float: right;
+    margin-top: 16px;
+    font-size: 10px; }
+  header a {
+    color: #eee; }
 
 form.formtastic fieldset.inputs ol li {
   margin: 0 !important; }
@@ -56,7 +67,7 @@ ul#wall li {
 /* flashes --- */
 .flash {
   padding: 7px;
-  margin: -20px 0 20px; }
+  margin: -10px 0 20px; }
   .flash.notice {
     background: #cbf6d6;
     border-bottom: 1px solid #258f2b; }
