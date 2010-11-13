@@ -5,6 +5,6 @@ en:
   formtastic:
     actions:
       status:
-        create: Post
+        create: Post Update
       comment:
-        create: Post
+        create: Post Comment

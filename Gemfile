@@ -13,7 +13,9 @@ gem 'devise', '1.1.3'
 group :development, :test do
   gem 'cucumber-rails'
   gem 'capybara'
+  gem 'database_cleaner'
   gem 'launchy'
+  gem 'syntax'
   gem 'rspec', '~> 2.0'
 end
 
