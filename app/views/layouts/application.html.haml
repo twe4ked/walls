@@ -7,9 +7,7 @@
   = csrf_meta_tag
   / fuckin' magnets how do they work..
 %body
-  %p.flash.notice= notice
-  %p.flash.alert= alert
-  
+  %h1 WAll
   .user
     - if user_signed_in?
       = current_user.username
@@ -19,4 +17,5 @@
       = link_to "Sign Up", new_user_registration_path
       |
       = link_to "Sign In", new_user_session_path
+  = flashes :notice, :alert
   = yield

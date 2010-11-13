@@ -3,7 +3,7 @@ class StatusesController < ApplicationController
   
   # GET /statuses
   def index
-    @statuses = Status.order 'statuses.created_at DESC'
+    @statuses = Status.includes(:user)
     @status = Status.new(params[:status])
   end
 
@@ -19,13 +19,14 @@ class StatusesController < ApplicationController
 
   # POST /statuses
   def create
-    @status = Status.new(params[:status])
+    @status = Status.new(params[:status].merge(:user => current_user))
 
     respond_to do |format|
       if @status.save
         format.html { redirect_to(statuses_path, :notice => 'Status was successfully created.') }
       else
-        format.html { render :action => "new" }
+        # format.html { render :action => "new" }
+        format.html { redirect_to(statuses_path, :alert => 'Status was not created.') }
       end
     end
   end
@@ -35,9 +36,6 @@ class StatusesController < ApplicationController
     @status = Status.find(params[:id])
     @status.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(statuses_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to(statuses_url)
   end
 end

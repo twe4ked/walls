@@ -1,12 +1,15 @@
-%h1 WAll
-
-= render :partial => "form"
-
+- semantic_form_for @status do |f|
+  - f.inputs do
+    = f.input :content
+  - f.buttons do
+    = f.commit_button
+    
 %ul#wall
   - @statuses.each do |status|
     %li
       %p= status.content
       %span= link_to status.created_at, status
+      = status.user.username
       
       %p.actions
         = link_to 'Delete', status, :confirm => 'Are you sure?', :method => :delete

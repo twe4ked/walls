@@ -1,6 +1,4 @@
-%p= notice
-
-%p= @status.user_id
+%p= @status.user.username
 %p= @status.content
 
 = link_to 'Back', statuses_path
