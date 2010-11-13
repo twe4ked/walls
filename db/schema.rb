@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101113050501) do
+ActiveRecord::Schema.define(:version => 20101113121136) do
 
   create_table "comments", :force => true do |t|
     t.integer  "status_id"
@@ -20,12 +20,24 @@ ActiveRecord::Schema.define(:version => 20101113050501) do
     t.datetime "updated_at"
   end
 
+  create_table "moderators", :force => true do |t|
+    t.integer  "wall_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "moderators", ["wall_id", "user_id"], :name => "index_moderators_on_wall_id_and_user_id", :unique => true
+
   create_table "statuses", :force => true do |t|
     t.integer  "user_id"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "wall_id"
   end
+
+  add_index "statuses", ["wall_id"], :name => "index_statuses_on_wall_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -46,5 +58,15 @@ ActiveRecord::Schema.define(:version => 20101113050501) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "walls", :force => true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "walls", ["slug"], :name => "index_walls_on_slug", :unique => true
 
 end

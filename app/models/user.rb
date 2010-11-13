@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
   
   has_many :statuses
+  has_many :moderators
+  has_many :walls, :through => :moderators
   
   before_validation :set_default_username
   
