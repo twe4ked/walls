@@ -6,7 +6,7 @@
     
 %ul#wall
   - @statuses.each do |status|
-    %li
+    %li[status]
       %p= status.content
       %span= link_to status.created_at, status
       = status.user.username
@@ -18,7 +18,7 @@
       - unless status.comments.count == 0
         %ul
           - status.comments.each do |comment|
-            %li
+            %li[comment]
               %p= comment.content
               %span= link_to comment.created_at, status
               = comment.user.username
