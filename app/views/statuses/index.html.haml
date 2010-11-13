@@ -3,32 +3,5 @@
     = f.input :content, :label => false
   = f.buttons do
     = f.commit_button
-    
 %ul#wall
-  - @statuses.each do |status|
-    %li[status]
-      %p= status.content
-      %span= link_to status.created_at, status
-      = status.user.username
-      
-      - if status.user == current_user
-        = link_to 'Delete', status, :confirm => 'Are you sure?', :method => :delete
-        
-      / Comments
-      - unless status.comments.count == 0
-        %ul
-          - status.comments.each do |comment|
-            %li[comment]
-              %p= comment.content
-              %span= link_to comment.created_at, status
-              = comment.user.username
-              - if comment.user == current_user
-                = link_to 'Delete', [status, comment], :confirm => 'Are you sure?', :method => :delete
-      / New comment form
-      - comment = status.comments.build
-      = semantic_form_for [status, comment], :html => {:id => dom_id(status, :new_comment)} do |f|
-        = f.inputs do
-          = f.input :content
-        = f.buttons do
-          = f.commit_button
-      %p= link_to 'Reply', '#', :class => 'reply', :id => status.id
+  = render :partial => "status", :collection => @statuses
