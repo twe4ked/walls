@@ -1,9 +1,10 @@
 class StatusesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show, :index]
+  
   # GET /statuses
   def index
     @statuses = Status.order 'statuses.created_at DESC'
     @status = Status.new(params[:status])
-    
   end
 
   # GET /statuses/1
