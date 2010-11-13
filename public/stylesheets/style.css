@@ -44,31 +44,48 @@ header {
   header a {
     color: #eee; }
 
-form.formtastic fieldset.inputs ol li {
-  margin: 0 !important; }
-  form.formtastic fieldset.inputs ol li.text label {
-    display: block; }
-  form.formtastic fieldset.inputs ol li.text textarea {
-    height: 20px;
-    width: 100%; }
+form.formtastic fieldset.inputs {
+  margin-bottom: 5px; }
+  form.formtastic fieldset.inputs ol li {
+    margin: 0 !important; }
+    form.formtastic fieldset.inputs ol li.text label {
+      display: block; }
+    form.formtastic fieldset.inputs ol li.text textarea {
+      height: 15px;
+      width: 448px;
+      padding: 5px;
+      border: 1px solid #999; }
 form.formtastic#new_status {
   margin-bottom: 20px; }
-form.formtastic#new_comment {
-  margin-left: 40px; }
+form.formtastic.new-comment fieldset.inputs ol li.text textarea {
+  margin-left: 40px;
+  width: 408px; }
+form.formtastic.new-comment fieldset.buttons {
+  margin: 0 0 0 40px; }
+  form.formtastic.new-comment fieldset.buttons ol {
+    margin: 0; }
+    form.formtastic.new-comment fieldset.buttons ol li {
+      margin: 0 !important; }
 
 ul#wall li {
   margin-bottom: 20px;
   /* comments */ }
-  ul#wall li span {
-    font-size: 10px; }
-    ul#wall li span a {
-      color: #999; }
-  ul#wall li .actions {
-    float: right; }
+  ul#wall li .content {
+    margin-bottom: 10px; }
+    ul#wall li .content span {
+      font-size: 10px; }
+      ul#wall li .content span a {
+        color: #999; }
+    ul#wall li .content .actions {
+      float: right; }
   ul#wall li ul {
-    margin: 10px 0 0 40px; }
+    margin: 0 0 0 40px; }
     ul#wall li ul li {
-      margin-bottom: 5px; }
+      margin-bottom: 5px;
+      background: #fff;
+      padding: 5px; }
+      ul#wall li ul li .content {
+        margin-bottom: 0; }
 
 /* flashes --- */
 .flash {

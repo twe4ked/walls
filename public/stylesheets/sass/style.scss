@@ -29,30 +29,44 @@ header{overflow:hidden;margin-bottom:10px;padding-bottom:10px;height:40px;color:
 }
 
 form.formtastic{
-  fieldset.inputs{
+  fieldset.inputs{margin-bottom:5px;
     ol{
       li{margin:0 !important;
         &.text{
           label{display:block;}
-          textarea{height:20px;width:100%;}
+          textarea{height:15px;width:448px;padding:5px;border:1px solid #999;}
         }
       }
     }
   }
   &#new_status{margin-bottom:20px;}
-  &#new_comment{margin-left:40px;}
+  
+  &.new-comment{
+    fieldset.inputs ol li.text textarea{margin-left:40px;width:408px;}
+    
+    fieldset.buttons{margin:0 0 0 40px;
+      ol{margin:0;
+        li{margin:0 !important;}
+      }
+    }
+    
+  }
 }
 
 ul#wall{
   li{margin-bottom:20px;
-    span{font-size:10px;
-      a{color:#999;}
+    .content{margin-bottom:10px;
+      span{font-size:10px;
+        a{color:#999;}
+      }
+      .actions{float:right;}
     }
-    .actions{float:right;}
     
     /* comments */
-    ul{margin:10px 0 0 40px;
-      li{margin-bottom:5px;}
+    ul{margin:0 0 0 40px;
+      li{margin-bottom:5px;background:#fff;padding:5px;
+        .content{margin-bottom:0;}
+      }
     }
   }
 }
