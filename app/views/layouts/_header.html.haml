@@ -1,6 +1,6 @@
 %header
   .container
-    %h1 WAll
+    %h1= link_to 'Walls', root_path
     .meta
       - if user_signed_in?
         = link_to current_user.username, edit_user_registration_path

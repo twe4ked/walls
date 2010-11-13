@@ -25,13 +25,14 @@ header {
   height: 40px;
   color: #eee;
   background: url("../images/header.png"); }
-  header h1 {
+  header h1 a {
     float: left;
     width: 70px;
     height: 50px;
     text-indent: -9001px;
     background: url("../images/logo.png");
-    margin-left: -10px; }
+    margin-left: -10px;
+    outline: none; }
   header .meta {
     float: right;
     margin-top: 16px;

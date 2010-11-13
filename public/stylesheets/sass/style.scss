@@ -19,7 +19,7 @@ a{color:#333;
 
 header{overflow:hidden;margin-bottom:10px;padding-bottom:10px;height:40px;color:#eee;
   background:url('../images/header.png');
-  h1{float:left;width:70px;height:50px;text-indent:-9001px;background:url('../images/logo.png');margin-left:-10px;}
+  h1 a{float:left;width:70px;height:50px;text-indent:-9001px;background:url('../images/logo.png');margin-left:-10px;outline:none;}
   .meta{float:right;margin-top:16px;font-size:10px;}
   a{color:#eee;}
 }
