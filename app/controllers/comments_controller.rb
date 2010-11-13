@@ -20,10 +20,10 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     
     unless @comment.user == current_user
-      redirect_to(statuses_path, :alert => 'Comment was not deleted.') && return
+      redirect_to(root_path, :alert => 'Comment was not deleted.') && return
     end
     
     @comment.destroy
-    redirect_to(statuses_url, :notice => 'Comment was successfully deleted')
+    redirect_to(root_path, :notice => 'Comment was successfully deleted')
   end
 end
