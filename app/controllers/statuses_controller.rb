@@ -32,10 +32,15 @@ class StatusesController < ApplicationController
   end
 
   # DELETE /statuses/1
+  
   def destroy
     @status = Status.find(params[:id])
+    
+    unless @status.user == current_user
+      redirect_to(statuses_path, :alert => 'Status was not deleted.') && return
+    end
+    
     @status.destroy
-
-    redirect_to(statuses_url)
+    redirect_to(statuses_url, :notice => 'Status was successfully deleted')
   end
 end

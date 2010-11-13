@@ -7,15 +7,20 @@
   = csrf_meta_tag
   / fuckin' magnets how do they work..
 %body
-  %h1 WAll
-  .user
-    - if user_signed_in?
-      = current_user.username
-      |
-      = link_to "Sign Out", destroy_user_session_path
-    - else
-      = link_to "Sign Up", new_user_registration_path
-      |
-      = link_to "Sign In", new_user_session_path
+  %header
+    %h1 WAll
+    .meta
+      - if user_signed_in?
+        - if current_user.username.blank?
+          = link_to current_user.email, edit_user_registration_path, :title => 'Want to see your username here? Add a username by visiting your profile'
+        - else
+          = link_to current_user.username, edit_user_registration_path
+        
+        |
+        = link_to "Sign Out", destroy_user_session_path
+      - else
+        = link_to "Sign Up", new_user_registration_path
+        |
+        = link_to "Sign In", new_user_session_path
   = flashes :notice, :alert
   = yield

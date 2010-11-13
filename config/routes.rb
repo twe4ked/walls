@@ -1,7 +1,9 @@
 Wall::Application.routes.draw do
   devise_for :users
 
-  resources :statuses
+  resources :statuses, :except => [:edit, :update] do
+    resources :comments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

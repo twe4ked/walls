@@ -11,5 +11,21 @@
       %span= link_to status.created_at, status
       = status.user.username
       
-      %p.actions
+      - if status.user == current_user
         = link_to 'Delete', status, :confirm => 'Are you sure?', :method => :delete
+        
+      %ul
+        - status.comments.each do |comment|
+          %li
+            %p= comment.content
+            %span= link_to comment.created_at, status
+            = comment.user.username
+            - if comment.user == current_user
+              = link_to 'Delete', [status, comment], :confirm => 'Are you sure?', :method => :delete
+              
+              
+      - semantic_form_for [status, status.comments.build] do |f|
+        - f.inputs do
+          = f.input :content
+        - f.buttons do
+          = f.commit_button
