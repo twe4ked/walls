@@ -2,7 +2,7 @@
 
 = render :partial => "form"
 
-%ul
+%ul#wall
   - @statuses.each do |status|
     %li
       %p= status.content
