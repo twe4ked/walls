@@ -1,4 +1,4 @@
-$(function()
-{
-	$('time.timeago').timeago();
+$(function() {
+  $('time.timeago').timeago();
+  $('textarea').elastic();
 });
