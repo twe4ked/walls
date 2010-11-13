@@ -10,6 +10,13 @@ gem 'haml', '3.0.23'
 gem 'formtastic', '1.1.0'
 gem 'devise', '1.1.3'
 
+group :development, :test do
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'rspec', '~> 2.0'
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
