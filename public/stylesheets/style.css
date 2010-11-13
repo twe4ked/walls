@@ -78,6 +78,8 @@ ul#wall li {
         color: #999; }
     ul#wall li .content .actions {
       float: right; }
+  ul#wall li p.comment a {
+    margin-left: 40px; }
   ul#wall li ul {
     margin: 0 0 0 40px; }
     ul#wall li ul li {
