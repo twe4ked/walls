@@ -6,7 +6,7 @@
   - @page_title = @wall.title
   
   %h2= link_to @wall.title, @wall
-  %p.description= @wall.description
+  .description= format_content(@wall.description)
   
   %strong Moderators
   %ul#moderators

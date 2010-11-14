@@ -1,6 +1,6 @@
 %li[status]
-  .content
-    %p= status.content
+  .content= format_content(status.content)
+  %p.meta
     %span.username Posted by #{status.user.username}
     %span
       = link_to timeago(status.created_at, :format => :long), [status.wall, status]
@@ -12,8 +12,8 @@
     %ul
       - status.comments.each do |comment|
         %li[comment]
-          .content
-            %p= comment.content
+          .content= format_content(comment.content)
+          %p.meta
             %span.username Posted by #{comment.user.username}
             %span
               = link_to timeago(comment.created_at, :format => :long), [status.wall, status]
