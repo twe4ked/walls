@@ -11,7 +11,7 @@ class Wall < ActiveRecord::Base
     self.slug
   end
   
-  def self.find(id)
-    find_by_slug! id
+  def self.find(*args)
+    args.size == 1 && find_by_slug(args.first) || super
   end
 end
