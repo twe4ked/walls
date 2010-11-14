@@ -80,24 +80,33 @@ form.formtastic{
 /* Wall --------------------------------------------------------------------- */
 ul#wall{
   li{margin-bottom:20px;
-    .content{margin-bottom:10px;color:#999;
+    .content{
       p{color:#111;}
       p:last-of-type{margin:0;}
+      .actions{float:right;}
+    }
+    
+    p.meta{margin-bottom:10px;color:#999;
       span{font-size:10px;
         a{color:#999;}
       }
-      .actions{float:right;}
     }
-    p.comment a{font-size:10px;margin-left:40px;padding-left:5px;}
+    
+    p.comment{margin-top:-10px;
+      a{font-size:10px;margin-left:40px;padding-left:5px;}
+    }
     
     /* Comments */
     ul{margin:0 0 0 40px;
-      li{background:#fff;padding:5px;margin-bottom:0px;
+      li{background:#fff;padding:5px;margin-bottom:10px;
         .content{margin-bottom:0;}
+        p.meta{margin-bottom:0;}
       }
     }
   }
 }
+
+ul#moderators{margin-bottom:10px;}
 
 /* Home --------------------------------------------------------------------- */
 ul#walls{overflow:hidden;margin-bottom:10px;
