@@ -30,6 +30,10 @@ html{font:12px/140% 'Helvetica Neue', Arial, Verdana, Sans-Serif;color:#222;back
   a{color:#333;
     &:hover{text-decoration:none;}
   }
+  h2 a{
+    text-decoration:none;
+    &:hover{text-decoration:underline;}
+  }
   
 /* Header ------------------------------------------------------------------- */
 header{overflow:hidden;margin-bottom:10px;padding-bottom:10px;height:40px;color:#eee;
