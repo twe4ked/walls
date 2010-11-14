@@ -3,7 +3,8 @@
     There are no walls. Why don't you 
     = link_to 'start one', new_wall_path
 - else
-  %ul
+  %ul#walls
     - @walls.each do |wall|
       %li= link_to wall.title, wall
-  %p= link_to 'Start a new wall', new_wall_path
+  - if user_signed_in?
+    %p= link_to 'Start a new wall', new_wall_path, :class => 'new'
