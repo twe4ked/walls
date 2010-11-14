@@ -18,8 +18,7 @@ class WallsController < ApplicationController
     
     respond_to do |format|
       if @wall.save
-        format.html { redirect_to(root_path, :notice => 'Wall was successfully created.') }
-        # TODO: redirect to newly created wall /w/foobar
+        format.html { redirect_to(@wall, :notice => 'Wall was successfully created.') }
       else
         format.html { render :action => "new", :alert => 'Wall was not created.' }
       end
