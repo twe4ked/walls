@@ -9,6 +9,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml', '3.0.23'
 gem 'formtastic', '1.1.0'
 gem 'devise', '1.1.3'
+gem 'inherited_resources'
 
 group :development, :test do
   gem 'cucumber-rails'
