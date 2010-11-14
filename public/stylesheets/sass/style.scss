@@ -100,7 +100,7 @@ ul#wall{
 }
 
 /* Home --------------------------------------------------------------------- */
-ul#walls{overflow:hidden;
+ul#walls{overflow:hidden;margin-bottom:10px;
   li{float:left;margin:0 10px 10px 0;
     a{text-decoration:none;@include border-radius;padding:2px 4px;
       background:#CCDAF3;white-space:nowrap;display:block;outline:none;
@@ -108,8 +108,6 @@ ul#walls{overflow:hidden;
     }
   }
 }
-
-a.new{float:right;}
 
 /* Flashes ------------------------------------------------------------------ */
 .flash{padding:7px;margin:-10px 0 10px;border-width:0 0 1px !important;}
