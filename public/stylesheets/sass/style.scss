@@ -102,7 +102,7 @@ ul#wall{
 /* Home --------------------------------------------------------------------- */
 ul#walls{overflow:hidden;
   li{float:left;margin:0 10px 10px 0;
-    a{text-decoration:none;@include border-radius;padding:2px 4px;background:#CCDAF3;white-space:nowrap;}
+    a{text-decoration:none;@include border-radius;padding:2px 4px;background:#CCDAF3;white-space:nowrap;display:block;}
   }
 }
 
