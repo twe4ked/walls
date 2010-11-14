@@ -8,7 +8,7 @@
     = f.input :username
     = f.input :email
     = f.input :password, :hint => "(leave blank if you don't want to change it)"
-    = f.input :password_confirmation, :hint "(we need your current password to confirm your changes)"
-    = f.input :current_password
+    = f.input :password_confirmation
+    = f.input :current_password, :hint => "(we need your current password to confirm your changes)"
   = f.buttons do
     = f.commit_button "Update"
