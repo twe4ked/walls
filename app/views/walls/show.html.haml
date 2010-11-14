@@ -4,4 +4,16 @@
   %p This was doesn't exist. Would you like to #{link_to 'create it', [:new, :wall]}?
 - else
   - @page_title = @wall.title
-  %h2= @wall.title
+  
+  %h2= link_to @wall.title, @wall
+  %p.description= @wall.description
+  
+  - if user_signed_in?
+    = semantic_form_for [@wall, Status.new] do |f|
+      = f.inputs do
+        = f.input :content, :label => false
+      = f.buttons do
+        = f.commit_button
+  
+  %ul#wall
+    = render :partial => "statuses/status", :collection => @statuses

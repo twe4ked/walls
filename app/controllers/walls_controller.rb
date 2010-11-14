@@ -11,6 +11,7 @@ class WallsController < ApplicationController
     rescue ::ActiveRecord::RecordNotFound
       nil
     end
+    @statuses = @wall && @wall.statuses.includes(:user, :comments => :user)
   end
   
   def new

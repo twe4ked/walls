@@ -1,6 +1,6 @@
 class CommentsController < BasePostController
   actions :create, :destroy
-  belongs_to :status
+  belongs_to :wall, :status
 
   private
 

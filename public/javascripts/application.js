@@ -4,7 +4,7 @@ $(function() {
   
   // Auto hide flashes
   setTimeout(function() {
-    slideAndHide('.flash');
+    slideAndHide('.flash.notice');
   }, 4000);
   
   // Hide comments forms on page load
