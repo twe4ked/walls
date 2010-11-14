@@ -1,12 +1,14 @@
 Walls::Application.routes.draw do
   devise_for :users
-
-  resources :walls, :path => "/w" do
+  
+  resources :walls, :path => "/w", :except => [:index, :new] do
     resources :statuses, :except => [:edit, :update] do
       resources :comments
     end
   end
-
+  
+  match 'w' => 'walls#new', :as => :new_wall
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
