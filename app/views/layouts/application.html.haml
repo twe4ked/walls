@@ -1,7 +1,10 @@
 !!! 5
 %html
 %head
-  %title Walls
+  %title
+    - unless @page_title.blank?
+      #{@page_title} -
+    Walls
   = stylesheet_link_tag :all
   = javascript_include_tag |
     'jquery', |
