@@ -1,0 +1,9 @@
+%h2 Make a new wall
+
+= semantic_form_for @wall do |f|
+  = f.inputs do
+    = f.input :title
+    = f.input :slug
+    = f.input :description
+  = f.buttons do
+    = f.commit_button

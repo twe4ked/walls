@@ -1,8 +1,10 @@
 Walls::Application.routes.draw do
   devise_for :users
 
-  resources :statuses, :except => [:edit, :update] do
-    resources :comments
+  resources :walls, :path => "/w" do
+    resources :statuses, :except => [:edit, :update] do
+      resources :comments
+    end
   end
 
   # The priority is based upon order of creation:
@@ -54,7 +56,7 @@ Walls::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "statuses#index"
+  root :to => "walls#index"
 
   # See how all your routes lay out with "rake routes"
 

@@ -5,4 +5,12 @@ class Wall < ActiveRecord::Base
   has_many :statuses
   has_many :moderators
   has_many :users, :through => :moderators
+  
+  def to_param
+    self.slug
+  end
+  
+  def self.find(id)
+    find_by_slug id
+  end
 end

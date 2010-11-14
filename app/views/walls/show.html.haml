@@ -1,0 +1,5 @@
+- if @wall.blank?
+  %h2 Wha wah...
+  %p This was doesn't exist. Would you like to #{link_to 'create it', new_wall_path(:slug => params[:id])}?
+- else
+  %h2= @wall.title
