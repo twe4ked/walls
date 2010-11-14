@@ -12,6 +12,6 @@ class Wall < ActiveRecord::Base
   end
   
   def self.find(id)
-    find_by_slug id
+    find_by_slug! id
   end
 end

@@ -6,7 +6,11 @@ class WallsController < ApplicationController
   end
   
   def show
-    @wall = Wall.find(params[:id])
+    @wall = begin
+      Wall.find params[:id]
+    rescue ::ActiveRecord::RecordNotFound
+      nil
+    end
   end
   
   def new
