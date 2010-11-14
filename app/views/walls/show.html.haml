@@ -4,4 +4,4 @@
   %p This was doesn't exist. Would you like to #{link_to 'create it', [:new, :wall]}?
 - else
   - @page_title = @wall.title
-  %h2= @wall.title
+  %h2= link_to @wall.title, @wall
