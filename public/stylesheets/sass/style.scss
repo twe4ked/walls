@@ -106,7 +106,12 @@ ul#walls{overflow:hidden;
 a.new{float:right;}
 
 /* Flashes ------------------------------------------------------------------ */
-.flash{padding:7px;margin:-10px 0 10px;
-  &.notice{background:$lightgreen;  border-bottom:1px solid $darkgreen;}
-  &.alert {background:$lightyellow; border-bottom:1px solid $darkyellow;}
-}
+.flash{padding:7px;margin:-10px 0 10px;border-width:0 0 1px !important;}
+
+  .notice{background:$lightgreen;  border:1px solid $darkgreen;}
+  .alert {background:$lightyellow; border:1px solid $darkyellow;}
+  
+  /* Messages */
+  p.notice, p.alert{padding:10px;border-width:1px;}
+  
+  

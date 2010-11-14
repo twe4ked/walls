@@ -1,3 +1,11 @@
+- unless user_signed_in?
+  .container
+    %p.alert
+      Hey, looks like you're new here, you have to
+      = link_to "sign up", new_user_registration_path
+      or
+      = link_to "sign in", new_user_session_path
+      to participate!
 - if @walls.blank?
   %p
     There are no walls. Why don't you 
