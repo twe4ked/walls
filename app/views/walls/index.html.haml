@@ -8,8 +8,10 @@
       to participate!
 - if @walls.blank?
   %p
-    There are no walls. Why don't you 
-    = link_to 'start one', new_wall_path
+    There are no walls.
+    - if user_signed_in?
+      Why don't you
+      = link_to 'start one', new_wall_path
 - else
   %ul#walls
     - @walls.each do |wall|
