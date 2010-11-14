@@ -4,7 +4,7 @@
     %span.username Posted by #{status.user.username}
     %span
       = link_to timeago(status.created_at, :format => :long), [status.wall, status]
-      - if status.user == current_user
+      - if status.deletable_by?(current_user)
         |
         = link_to 'Delete', [status.wall, status], :confirm => 'Are you sure?', :method => :delete
         
@@ -17,7 +17,7 @@
             %span.username Posted by #{comment.user.username}
             %span
               = link_to timeago(comment.created_at, :format => :long), [status.wall, status]
-              - if comment.user == current_user
+              - if comment.deletable_by?(current_user)
                 |
                 = link_to 'Delete', [status.wall, status, comment], :confirm => 'Are you sure?', :method => :delete
                 

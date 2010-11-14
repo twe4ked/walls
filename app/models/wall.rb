@@ -14,4 +14,8 @@ class Wall < ActiveRecord::Base
   def self.find(*args)
     args.size == 1 && find_by_slug(args.first) || super
   end
+  
+  def moderatable_by?(user)
+    self.users.include? user
+  end
 end

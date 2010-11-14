@@ -6,4 +6,8 @@ class Status < ActiveRecord::Base
   has_many :comments
   
   default_scope order('statuses.created_at DESC')
+  
+  def deletable_by?(user)
+    self.user == user || self.wall.moderatable_by?(user)
+  end
 end

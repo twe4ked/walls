@@ -8,12 +8,17 @@
   %h2= link_to @wall.title, @wall
   %p.description= @wall.description
   
+  %strong Moderators
+  %ul#moderators
+    - @wall.moderators.includes(:user).each do |moderator|
+      %li= moderator.user.username
+      
   - if user_signed_in?
     = semantic_form_for [@wall, Status.new] do |f|
       = f.inputs do
         = f.input :content, :label => false
       = f.buttons do
         = f.commit_button
-  
+        
   %ul#wall
     = render :partial => "statuses/status", :collection => @statuses
