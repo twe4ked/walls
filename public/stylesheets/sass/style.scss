@@ -18,7 +18,6 @@ html{font:12px/140% 'Helvetica Neue', Arial, Verdana, Sans-Serif;color:#222;back
   
   /* Typography */
   p{margin-bottom:10px;}
-  p.description{font-size:16px;text-shadow:1px 1px 1px #fff;}
   strong{font-weight:bold;}
   
   /* Headers */
@@ -58,7 +57,7 @@ form.formtastic{
           label{display:block;}
           textarea{height:15px;width:448px;padding:5px;border:1px solid #999;}
         }
-        &.string input, &.password input{width:448px;padding:5px;}
+        &.string input, &.password input{width:448px;padding:5px;border:1px solid #999;}
         /*&.password{width:232px;float:left;
           input{padding:5px;width:200px;}
         }*/
@@ -103,7 +102,7 @@ ul#wall{
 /* Home --------------------------------------------------------------------- */
 ul#walls{overflow:hidden;
   li{float:left;margin:0 10px 10px 0;
-    a{text-decoration:none;@include border-radius;padding:2px 4px;background:#CCDAF3;}
+    a{text-decoration:none;@include border-radius;padding:2px 4px;background:#CCDAF3;white-space:nowrap;}
   }
 }
 
