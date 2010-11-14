@@ -10,6 +10,7 @@ gem 'haml', '3.0.23'
 gem 'formtastic', '1.1.0'
 gem 'devise', '1.1.3'
 gem 'inherited_resources'
+gem 'gravtastic', '3.1.0'
 
 group :development, :test do
   gem 'cucumber-rails'

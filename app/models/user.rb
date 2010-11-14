@@ -15,8 +15,14 @@ class User < ActiveRecord::Base
   
   validates_uniqueness_of :username
   
+  # gravatars
+  include Gravtastic
+  gravtastic  :secure => false,
+              :filetype => :png,
+              :rating => 'PG',
+              :default => "identicon"
+              
   private
-    
     def set_default_username
       self.username ||= self.email.split("@").first
     end

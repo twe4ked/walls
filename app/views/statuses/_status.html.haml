@@ -1,4 +1,5 @@
 %li[status]
+  = image_tag status.user.gravatar_url(:size => "32"), :width => "32px", :height => "32px", :class => "avatar"
   .content= format_content(status.content)
   %p.meta
     %span.username Posted by #{status.user.username}
@@ -12,6 +13,7 @@
     %ul
       - status.comments.each do |comment|
         %li[comment]
+          = image_tag comment.user.gravatar_url(:size => "32"), :width => "32px", :height => "32px", :class => "avatar"
           .content= format_content(comment.content)
           %p.meta
             %span.username Posted by #{comment.user.username}
