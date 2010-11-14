@@ -1,4 +1,4 @@
-class Moderators < ActiveRecord::Base
+class Moderator < ActiveRecord::Base
   belongs_to :wall
   belongs_to :user
   
