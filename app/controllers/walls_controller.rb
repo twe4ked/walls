@@ -22,7 +22,7 @@ class WallsController < ApplicationController
     @wall = Wall.new(params[:wall])
     
     respond_to do |format|
-      if @wall.save
+      if @wall.save && @wall.moderators.create!(:user => current_user)
         format.html { redirect_to(@wall, :notice => 'Wall was successfully created.') }
       else
         format.html { render :action => "new", :alert => 'Wall was not created.' }
