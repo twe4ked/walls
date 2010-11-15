@@ -1,4 +1,6 @@
-%h2 Sign up
+- @page_title = "Sign up"
+
+%h2= @page_title
 
 = semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = devise_error_messages!
